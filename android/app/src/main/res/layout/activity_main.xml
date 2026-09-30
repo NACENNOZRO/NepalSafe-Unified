@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingBottom="36dp">
+
+        
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_header" android:orientation="vertical" android:paddingStart="20dp" android:paddingTop="24dp" android:paddingEnd="20dp" android:paddingBottom="24dp">
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/app_name" android:textColor="@color/white" android:textSize="32sp" android:textStyle="bold" />
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/app_subtitle" android:lineSpacingExtra="3dp" android:textColor="#E2E8F0" android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/dashboardServiceStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="16dp" android:padding="16dp" android:background="@drawable/bg_card" android:text="Checking your services…" android:textColor="@color/navy_soft" android:lineSpacingExtra="5dp" android:textSize="14sp" android:accessibilityLiveRegion="polite" />
+
+        
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="16dp" android:layout_marginEnd="16dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp">
+
+            <TextView style="@style/TextSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/integrated_tools_title" />
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/integrated_tools_help" android:textColor="@color/muted" android:textSize="13sp" />
+
+            <Button android:id="@+id/openWarningButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:background="@drawable/bg_primary_button" android:text="@string/open_early_warning" android:textColor="@color/white" android:textStyle="bold" android:minHeight="52dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+            <Button android:id="@+id/openAnalysisButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_primary_button" android:text="@string/open_disaster_analysis" android:textColor="@color/white" android:textStyle="bold" android:minHeight="52dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+            <Button android:id="@+id/openCommunityReportButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp" android:layout_marginTop="8dp" android:padding="12dp" android:background="@drawable/bg_chip" android:text="Share a community report" android:textAllCaps="false" android:textColor="@color/navy" android:textSize="15sp" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+            <Button android:id="@+id/openSettingsButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_chip" android:text="@string/backend_settings" android:textColor="@color/navy" android:textSize="13sp" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+        </LinearLayout>
+
+        
+        <LinearLayout android:id="@+id/statusCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="16dp" android:layout_marginEnd="16dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+
+                <TextView android:id="@+id/statusTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/mesh_off" android:textColor="@color/navy" android:textSize="19sp" android:textStyle="bold" />
+
+                <TextView android:id="@+id/peerCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_pill" android:text="@string/no_peers" android:textColor="@color/muted" android:textSize="13sp" />
+            </LinearLayout>
+
+            <TextView android:id="@+id/connectionDetail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/connection_waiting" android:textColor="@color/blue" android:textSize="14sp" />
+
+            <Button android:id="@+id/toggleMeshButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:background="@drawable/bg_primary_button" android:text="@string/start_lifeline" android:textColor="@color/white" android:textSize="16sp" android:textStyle="bold" android:minHeight="54dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+            
+            <LinearLayout android:id="@+id/setupWarningLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:background="@drawable/bg_banner_alert" android:orientation="vertical" android:visibility="gone">
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/setup_warning_title" android:textColor="@color/warning_text" android:textSize="14sp" android:textStyle="bold" />
+
+                <TextView android:id="@+id/networkChecks" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:lineSpacingExtra="2dp" android:text="@string/setup_warning_summary" android:textColor="@color/navy_soft" android:textSize="13sp" />
+
+                <Button android:id="@+id/setupButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_primary_button" android:text="@string/grant_permissions" android:textColor="@color/white" android:textSize="13sp" android:textStyle="bold" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="14dp" android:layout_marginEnd="16dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/broadcast_title" style="@style/TextSection" />
+
+                <TextView android:id="@+id/locationStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_pill" android:text="@string/location_waiting" android:textColor="@color/muted" android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/broadcast_help_simple" android:textColor="@color/muted" android:textSize="13sp" />
+
+            
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/quick_tags_title" android:textColor="@color/muted" android:textSize="11sp" android:textStyle="bold" />
+
+            <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:scrollbars="none">
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+
+                    <Button android:id="@+id/chipFlood" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_chip" android:minWidth="0dp" android:paddingStart="12dp" android:paddingEnd="12dp" android:text="@string/tag_flood" android:textColor="@color/navy" android:textSize="12sp" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+                    <Button android:id="@+id/chipLandslide" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:background="@drawable/bg_chip" android:minWidth="0dp" android:paddingStart="12dp" android:paddingEnd="12dp" android:text="@string/tag_landslide" android:textColor="@color/navy" android:textSize="12sp" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+                    <Button android:id="@+id/chipMedical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:background="@drawable/bg_chip" android:minWidth="0dp" android:paddingStart="12dp" android:paddingEnd="12dp" android:text="@string/tag_medical" android:textColor="@color/navy" android:textSize="12sp" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+                    <Button android:id="@+id/chipTrapped" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:background="@drawable/bg_chip" android:minWidth="0dp" android:paddingStart="12dp" android:paddingEnd="12dp" android:text="@string/tag_trapped" android:textColor="@color/navy" android:textSize="12sp" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+                    <Button android:id="@+id/chipFood" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:background="@drawable/bg_chip" android:minWidth="0dp" android:paddingStart="12dp" android:paddingEnd="12dp" android:text="@string/tag_food_water" android:textColor="@color/navy" android:textSize="12sp" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <EditText android:id="@+id/messageInput" android:layout_width="match_parent" android:layout_height="100dp" android:layout_marginTop="12dp" android:background="@drawable/bg_input" android:gravity="top|start" android:hint="@string/sos_hint" android:importantForAutofill="no" android:inputType="textCapSentences|textMultiLine" android:maxLength="500" android:textColor="@color/navy" android:textColorHint="@color/muted" android:textSize="14sp" />
+
+            <EditText android:id="@+id/nameInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_input" android:hint="@string/your_name" android:importantForAutofill="no" android:inputType="textPersonName" android:maxLength="40" android:singleLine="true" android:textColor="@color/navy" android:textColorHint="@color/muted" android:textSize="13sp" />
+
+            
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:gravity="center_vertical" android:orientation="horizontal">
+
+                <Button android:id="@+id/recordVoiceButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:background="@drawable/bg_chip" android:text="@string/record_voice" android:textColor="@color/navy" android:textSize="13sp" android:textStyle="bold" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+            </LinearLayout>
+
+            
+            <LinearLayout android:id="@+id/voicePreviewLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_pill" android:gravity="center_vertical" android:orientation="horizontal" android:padding="8dp" android:visibility="gone">
+
+                <TextView android:id="@+id/voicePreviewLabel" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/voice_attached" android:textColor="@color/badge_green_text" android:textSize="12sp" android:textStyle="bold" />
+
+                <Button android:id="@+id/playVoicePreviewButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_chip" android:minWidth="0dp" android:paddingStart="10dp" android:paddingEnd="10dp" android:text="@string/play_voice" android:textColor="@color/navy" android:textSize="11sp" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+                <Button android:id="@+id/deleteVoicePreviewButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:background="@drawable/bg_chip" android:minWidth="0dp" android:paddingStart="8dp" android:paddingEnd="8dp" android:text="@string/delete_voice" android:textColor="@color/danger" android:textSize="11sp" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+            </LinearLayout>
+
+            <Button android:id="@+id/sendButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:background="@drawable/bg_sos_button" android:text="@string/send_sos" android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold" android:minHeight="58dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+        </LinearLayout>
+
+        
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="14dp" android:layout_marginEnd="16dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp">
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/hop_title_simple" style="@style/TextSection" />
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/hop_help_simple" android:textColor="@color/muted" android:textSize="13sp" />
+
+            
+            <TextView android:id="@+id/hopLog" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone" />
+
+            <TextView android:id="@+id/hopEmptyText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center" android:lineSpacingExtra="3dp" android:padding="16dp" android:text="@string/hop_empty_simple" android:textColor="@color/muted" android:textSize="14sp" />
+
+            <LinearLayout android:id="@+id/hopLogContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="vertical" />
+        </LinearLayout>
+
+        
+        <Button android:id="@+id/advancedToggleButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="14dp" android:layout_marginEnd="16dp" android:background="?android:attr/selectableItemBackground" android:text="@string/show_manual_connection" android:textColor="@color/muted" android:textSize="12sp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+        <LinearLayout android:id="@+id/advancedConnectionContent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="6dp" android:layout_marginEnd="16dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp" android:visibility="gone">
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/manual_title" style="@style/TextSection" />
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="@string/manual_help" android:textColor="@color/muted" android:textSize="13sp" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+
+                <Button android:id="@+id/automaticModeButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:minWidth="0dp" android:text="@string/mode_auto" android:textSize="12sp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+                <Button android:id="@+id/hostModeButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="4dp" android:layout_weight="1" android:minWidth="0dp" android:text="@string/mode_host" android:textSize="12sp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+                <Button android:id="@+id/searchModeButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="4dp" android:layout_weight="1" android:minWidth="0dp" android:text="@string/mode_search" android:textSize="12sp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+            </LinearLayout>
+
+            <TextView android:id="@+id/manualModeStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/manual_auto_status" android:textColor="@color/navy_soft" android:textSize="13sp" />
+
+            <TextView android:id="@+id/nodesEmpty" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/no_nodes_found" android:textColor="@color/muted" android:textSize="13sp" android:visibility="gone" />
+
+            <LinearLayout android:id="@+id/discoveredNodesContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

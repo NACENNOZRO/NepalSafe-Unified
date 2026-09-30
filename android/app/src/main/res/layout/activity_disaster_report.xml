@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingBottom="36dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_header" android:orientation="vertical" android:padding="20dp">
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="🚨 Disaster Analysis" android:textColor="@color/white" android:textSize="24sp" android:textStyle="bold" />
+
+            <TextView android:id="@+id/analysisBackendStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="Connecting to analysis backend…" android:textColor="#E2E8F0" android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="16dp" android:layout_marginEnd="16dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp">
+
+            <TextView style="@style/TextSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Live GPS Location" />
+
+            <TextView android:id="@+id/analysisLocationStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:textColor="@color/blue" android:textSize="14sp" />
+
+            <Button android:id="@+id/refreshAnalysisLocationButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_chip" android:text="REFRESH LOCATION" android:textColor="@color/navy" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="14dp" android:layout_marginEnd="16dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp">
+
+            <TextView style="@style/TextSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Capture / Select Disaster Photo" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
+
+                <Button android:id="@+id/takeAnalysisPhotoButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:background="@drawable/bg_primary_button" android:text="📷 TAKE PHOTO" android:textColor="@color/white" android:minHeight="50dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+                <Button android:id="@+id/pickAnalysisPhotoButton" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:layout_weight="1" android:background="@drawable/bg_chip" android:text="🖼 CHOOSE GALLERY" android:textColor="@color/navy" android:minHeight="50dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+            </LinearLayout>
+
+            <ImageView android:id="@+id/analysisPhotoPreview" android:layout_width="match_parent" android:layout_height="240dp" android:layout_marginTop="10dp" android:background="@color/card_subtle" android:contentDescription="Photo selected for disaster analysis" android:scaleType="centerCrop" android:visibility="gone" />
+
+            <Button android:id="@+id/removeAnalysisPhotoButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:background="@drawable/bg_chip" android:text="REMOVE PHOTO" android:textColor="@color/danger" android:visibility="gone" android:minHeight="48dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+
+            <Button android:id="@+id/runAnalysisButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:alpha="0.55" android:background="@drawable/bg_sos_button" android:enabled="false" android:text="⚡ RUN ANALYSIS &amp; BROADCAST" android:textColor="@color/white" android:textStyle="bold" android:minHeight="58dp" android:textAllCaps="false" android:paddingTop="10dp" android:paddingBottom="10dp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="14dp" android:layout_marginEnd="16dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp">
+
+            <TextView style="@style/TextSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Analysis Result" />
+
+            <TextView android:id="@+id/analysisResultText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:lineSpacingExtra="4dp" android:text="Choose a photo to begin. The backend checks flood-water color, structural damage texture, and fire/thermal signals." android:textColor="@color/navy_soft" android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="14dp" android:layout_marginEnd="16dp" android:background="@drawable/bg_card" android:orientation="vertical" android:padding="18dp">
+
+            <TextView style="@style/TextSection" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="🚨 Live Community Disaster Feed" />
+
+            <TextView android:id="@+id/analysisFeedEmpty" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="No disaster broadcasts received yet." android:textColor="@color/muted" android:textSize="13sp" />
+
+            <LinearLayout android:id="@+id/analysisAlertFeed" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="vertical" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
