@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NepalSafe</string>
+    <string name="app_subtitle">Know your surroundings. Stay connected.</string>
+    <string name="integrated_tools_title">Your safety dashboard</string>
+    <string name="integrated_tools_help">Live risk intelligence and camera analysis work online. Lifeline below continues phone-to-phone without internet.</string>
+    <string name="open_early_warning">Hazards, people &amp; escape routes</string>
+    <string name="open_disaster_analysis">Analyze a disaster photo</string>
+    <string name="backend_settings">Connection settings</string>
+    <string name="simple_subheadline">Carries and relays SOS messages phone-to-phone automatically.</string>
+    <string name="mesh_off">Lifeline is paused</string>
+    <string name="mesh_on">Lifeline is actively relaying</string>
+    <string name="no_peers">No nearby phones connected</string>
+    <string name="connection_waiting">Tap START LIFELINE to connect with nearby phones.</string>
+    <string name="start_lifeline">START LIFELINE</string>
+    <string name="stop_lifeline">STOP LIFELINE</string>
+    <string name="setup_warning_title">Permissions needed</string>
+    <string name="setup_warning_summary">Location, nearby devices, and battery access are required for offline mesh relay.</string>
+    <string name="grant_permissions">ALLOW ACCESS</string>
+    <string name="phone_ready_toast">Phone is ready for offline relay</string>
+    <string name="setup_incomplete">Setup not complete. Tap Allow Access to enable offline relay.</string>
+    <string name="access_not_allowed">Permissions required</string>
+    <string name="access_not_allowed_message">NepalSafe requires nearby devices, location, and notifications to discover and relay emergency messages without internet. You can enable them in App Settings.</string>
+    <string name="open_app_settings">OPEN APP SETTINGS</string>
+    <string name="not_now">NOT NOW</string>
+    <string name="access_permissions">permissions</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="gps_location">GPS</string>
+    <string name="google_play_services">Google Play services</string>
+    <string name="background_access">screen-off battery access</string>
+
+    <string name="broadcast_title">Send Emergency SOS</string>
+    <string name="broadcast_help_simple">Tap a quick tag or type details. Your GPS is automatically attached.</string>
+    <string name="quick_tags_title">QUICK EMERGENCY TAGS</string>
+    <string name="tag_flood">🌊 Flood / Water</string>
+    <string name="tag_landslide">⛰️ Landslide</string>
+    <string name="tag_medical">🚑 Medical Help</string>
+    <string name="tag_trapped">🏚️ Trapped</string>
+    <string name="tag_food_water">🥫 Food / Water</string>
+    <string name="your_name">Your name (optional)</string>
+    <string name="sos_hint">What is your emergency? (e.g. 4 people trapped on roof)</string>
+    <string name="send_sos">🚨 BROADCAST SOS NOW</string>
+    <string name="describe_emergency">Please enter emergency details or tap a tag above</string>
+    <string name="unknown_survivor">Civilian</string>
+    <string name="sos_storage_failed">Could not save SOS. Check storage.</string>
+    <string name="sos_handed_to_mesh">Emergency SOS passed to nearby phone.</string>
+    <string name="sos_saved_waiting">SOS saved on phone. It will transfer automatically when a phone is nearby.</string>
+    <string name="sos_saved">Emergency SOS saved</string>
+
+    <string name="record_voice">🎙️ RECORD VOICE SOS</string>
+    <string name="stop_recording">⏹️ STOP RECORDING (%1$ds)</string>
+    <string name="voice_attached">🎙️ Voice SOS Attached (%1$ds)</string>
+    <string name="play_voice">▶ Play Voice Note</string>
+    <string name="stop_voice">⏹ Stop Audio</string>
+    <string name="delete_voice">✕ Remove</string>
+    <string name="mic_permission_needed">Microphone permission needed to record Voice SOS</string>
+    <string name="journey_voice_badge">🎙️ Voice Distress Call</string>
+
+    <string name="hop_title_simple">Live Message Journey</string>
+    <string name="hop_help_simple">SOS packets hop from phone to phone until reaching rescue workers.</string>
+    <string name="hop_empty_simple">No emergency messages yet.\nDistress calls broadcast or relayed will appear here.</string>
+    <string name="journey_status_relayed">✓ Relayed to nearby phone</string>
+    <string name="journey_status_waiting">⏳ Waiting for nearby phone</string>
+    <string name="journey_status_received">📥 Received from nearby survivor</string>
+    <string name="journey_status_saved">💾 Saved on this phone</string>
+
+    <string name="location_waiting">Waiting for GPS…</string>
+    <string name="location_permission_needed">Location permission required for GPS</string>
+    <string name="location_acquiring">Acquiring GPS fix…</string>
+    <string name="location_disabled">Turn on GPS to attach coordinates</string>
+    <string name="location_coordinates">📍 GPS: %1$.5f, %2$.5f</string>
+    <string name="location_required">Waiting for valid GPS coordinates to attach to SOS.</string>
+
+    <plurals name="peer_count">
+        <item quantity="one">%1$d nearby phone connected</item>
+        <item quantity="other">%1$d nearby phones connected</item>
+    </plurals>
+
+    <string name="manual_title">Advanced Mesh Controls</string>
+    <string name="manual_help">Manual modes for testing: one phone in Host mode, the other in Find Nodes mode.</string>
+    <string name="mode_auto">AUTO MESH</string>
+    <string name="mode_host">HOST MODE</string>
+    <string name="mode_search">FIND NODES</string>
+    <string name="manual_auto_status">Auto Mesh: continuous background discovery and relay.</string>
+    <string name="manual_host_status">Host Mode: this phone stays discoverable.</string>
+    <string name="manual_search_status">Find Nodes: tap a discovered phone below to connect.</string>
+    <string name="show_manual_connection">ADVANCED CONNECTION OPTIONS ▾</string>
+    <string name="hide_manual_connection">HIDE ADVANCED OPTIONS ▴</string>
+    <string name="connect_to_phone">Connect to %1$s</string>
+    <string name="connecting_to_phone">Connecting to %1$s…</string>
+    <string name="no_nodes_found">Searching for nearby NepalSafe phones…</string>
+
+    <string name="verify_phone">Verify Nearby Phone</string>
+    <string name="verify_phone_message">Device: %1$s\n\nAuth Code: %2$s\n\nConfirm if the same code appears on both phones.</string>
+    <string name="accept">ACCEPT</string>
+    <string name="reject">REJECT</string>
+    <string name="received_sos">Emergency message received from %1$s</string>
+    <string name="nearby_sos_received">Nearby emergency message received!</string>
+    <string name="searching_again">Nearby phone disconnected. Searching again…</string>
+    <string name="connected_ready">Connected to nearby phone. Ready to pass messages.</string>
+    <string name="sending_saved_messages">Relaying saved emergency messages…</string>
+    <string name="still_searching">Searching for nearby phones…</string>
+    <string name="looking_for_phones">Looking for nearby NepalSafe phones…</string>
+</resources>

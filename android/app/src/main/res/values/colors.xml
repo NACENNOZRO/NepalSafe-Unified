@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy">#111827</color>
+    <color name="navy_soft">#1F2937</color>
+    <color name="blue">#087EA4</color>
+    <color name="teal">#087F72</color>
+    <color name="danger">#DC2626</color>
+    <color name="danger_dark">#B91C1C</color>
+    <color name="paper">#F1F6F5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="muted">#64748B</color>
+    <color name="line">#DCE3EB</color>
+    <color name="success_bg">#ECFDF5</color>
+    <color name="warning_bg">#FFFBEB</color>
+    <color name="warning_border">#FCD34D</color>
+    <color name="warning_text">#B45309</color>
+    <color name="badge_green_bg">#DCFCE7</color>
+    <color name="badge_green_text">#15803D</color>
+    <color name="badge_yellow_bg">#FEF9C3</color>
+    <color name="badge_yellow_text">#A16207</color>
+    <color name="badge_blue_bg">#E0F2FE</color>
+    <color name="badge_blue_text">#0369A1</color>
+    <color name="card_subtle">#F8FAFC</color>
+</resources>
