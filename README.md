@@ -6,11 +6,11 @@ NepalSafe is a student engineering project integrating an Android safety dashboa
 
 **Stage:** Integration prototype · **Native client:** Kotlin / Android · **Image backend:** Python · **Additional client:** Expo / React Native
 
-## Source download
+## Source files
 
-[Download NepalSafe-Integration-Source.zip](NepalSafe-Integration-Source.zip) and extract it to inspect the full directory structure, Android code, backend, tests and build tools. Source is supplied as an archive in this repository.
+Browse `android/`, `module4/`, `tools/` and `tests/` directly in this repository. The original [NepalSafe-Integration-Source.zip](NepalSafe-Integration-Source.zip) is retained as a source snapshot.
 
-| Folder in the archive | Contents |
+| Folder | Contents |
 | --- | --- |
 | `android/` | Native dashboard, mesh transport, SOS storage and Android resources |
 | `module4/` | Expo client, native integration snippets and Python image service |
@@ -41,7 +41,7 @@ SOS packet storage, voice recording, manual connections, and image-analysis algo
 - `tools/pack_module_sources.py`: reduces module upload size by omitting dependency caches,
   virtual environments and Gradle build outputs. It preserves source, assets and model/data files.
 - `tests/`: local alert storage tests plus API integration tests requiring the backend dependencies.
-- `.github/workflows/android.yml`: an optional build workflow; it has not been uploaded or executed.
+- `.github/workflows/android.yml`: an optional build workflow described by the original package; it is not included in this source import.
 
 ## What remains blocked
 
