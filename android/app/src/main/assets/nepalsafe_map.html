@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    html,body,#map{margin:0;height:100%;width:100%;background:#0f171c}
+    .leaflet-container{background:#0f171c;font-family:system-ui,Roboto,sans-serif}
+    .leaflet-control-attribution{background:rgba(15,23,28,.8)!important;color:#93aab7;font-size:9px}
+    .leaflet-control-attribution a{color:#cbd5e1}
+    .leaflet-top{top:118px}
+    .tag{background:rgba(15,23,28,.9);border:1px solid #475569;border-radius:4px;color:#fff;font-size:11px;padding:3px 6px;white-space:nowrap}
+    .pin{border-radius:50%;border:2px solid #fff;box-sizing:border-box}
+    .me{width:18px;height:18px;border-radius:50%;background:#4c9be0;border:3px solid #fff;box-shadow:0 0 0 7px rgba(76,155,224,.25)}
+    .sos{width:22px;height:22px;border-radius:50%;background:#dc2626;border:2px solid #fff;animation:beat 1.2s infinite}
+    @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
+    #offline{position:absolute;inset:0;display:none;align-items:center;justify-content:center;color:#cbd5e1;text-align:center;padding:24px;line-height:1.5}
+  </style>
+</head>
+<body>
+<div id="map"></div><div id="offline">The map tiles need a connection.<br/>Saved hazard readings may be out of date. Lifeline can communicate with nearby phones.</div>
+<script>
+  const escapeText = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const BAND={safe:'#16a34a',watch:'#ca8a04',warning:'#ea580c',danger:'#dc2626'};
+  let map,areas,marks,pending=null;
+  function boot(){
+    if(typeof L==='undefined'){document.getElementById('offline').style.display='flex';return;}
+    map=L.map('map').setView([28.2603,85.6797],12);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+    areas=L.layerGroup().addTo(map);marks=L.layerGroup().addTo(map);
+    if(pending) draw(pending);
+  }
+  function draw(p){
+    if(!map){pending=p;return;} pending=p; areas.clearLayers();marks.clearLayers();
+    const s=p.snapshot||{},w=s.warning_area;
+    if(w&&w.polygon){const c=BAND[w.band]||'#64748b';const zone=L.polygon(w.polygon,{color:c,weight:2,fillColor:c,fillOpacity:.22}).addTo(areas).bindTooltip(escapeText(w.name)+' · '+Math.round(w.risk||0)+'%',{permanent:true,direction:'top',className:'tag'});map.fitBounds(zone.getBounds().pad(.25));}
+    (s.safe_points||[]).forEach(x=>L.marker([x.lat,x.lon],{icon:L.divIcon({className:'',iconSize:[12,12],html:'<div class="pin" style="width:12px;height:12px;background:#22c55e"></div>'})}).addTo(areas).bindTooltip('Safe: '+escapeText(x.name),{className:'tag'}));
+    if(p.me)L.marker([p.me.lat,p.me.lon],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],html:'<div class="me"></div>'})}).addTo(marks).bindTooltip('You',{className:'tag'});
+    (p.people||[]).forEach(x=>{const c=x.status==='needs_help'?'#dc2626':'#0ea5e9';L.marker([x.lat,x.lon],{icon:L.divIcon({className:'',iconSize:[13,13],html:'<div class="pin" style="width:13px;height:13px;background:'+c+'"></div>'})}).addTo(marks).bindTooltip(escapeText(x.name)+' · '+(escapeText(x.distance_text)||''),{className:'tag'});});
+    (p.sos||[]).forEach(x=>L.marker([x.lat,x.lon],{icon:L.divIcon({className:'',iconSize:[22,22],iconAnchor:[11,11],html:'<div class="sos"></div>'})}).addTo(marks).bindTooltip('SOS: '+escapeText(x.name),{permanent:true,className:'tag'}));
+  }
+  window.renderNepalSafe=draw;
+  document.addEventListener('DOMContentLoaded',boot);if(document.readyState!=='loading')boot();
+</script>
+</body>
+</html>
