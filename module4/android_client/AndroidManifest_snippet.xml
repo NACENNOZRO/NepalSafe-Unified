@@ -1,0 +1,38 @@
+<!--
+  Add these inside your existing AndroidManifest.xml.
+  Permissions block goes as a direct child of <manifest>.
+  The <provider> block goes inside <application>.
+-->
+
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-feature android:name="android.hardware.camera" android:required="true" />
+
+<!-- Inside <application> ... </application> -->
+
+<!--
+  Fixed during troubleshooting: MainActivity.kt was provided with no
+  <activity> declaration. If your app doesn't already declare it
+  elsewhere, add this (adjust exported/intent-filter to fit whether this
+  is your launcher activity or one you navigate to from elsewhere).
+-->
+<activity
+    android:name=".MainActivity"
+    android:exported="true">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
+
+<provider
+    android:name="androidx.core.content.FileProvider"
+    android:authorities="${applicationId}.fileprovider"
+    android:exported="false"
+    android:grantUriPermissions="true">
+    <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths" />
+</provider>
